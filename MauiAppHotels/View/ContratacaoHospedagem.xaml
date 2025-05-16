@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppHotels.View.ContratacaoHospedagem"
+             Title="ContratacaoHospedagem"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="{StaticResource Darkred}">
+             
+    <VerticalStackLayout VerticalOptions="CenterAndExpand"
+                         Padding="10">
+        <Label Text="Calculo da Diária"
+               HorizontalTextAlignment="Center"
+               FontSize="50"
+               FontFamily="Fjalla"
+               TextColor="{StaticResource Cyan}"
+               Padding="10"/>
+        <Frame>
+            <VerticalStackLayout Spacing="10">
+                <Grid RowDefinitions="Auto, Auto"
+                      ColumnDefinitions="*,*,2*">
+                    
+                    <Label Text="Adulto"
+                           Grid.Row="0" Grid.Column="0"/>
+                    <Label Text="{Binding Value}"
+                           TextColor="{StaticResource Cyan}"
+                           Grid.Row="0" Grid.Column="1"
+                           BindingContext="{x:Reference stp_adulto}"/>
+
+
+                    <Label Text="Criança"
+                           Grid.Row="1" Grid.Column="0"/>
+                    <Label Text="{Binding Value}"
+                           TextColor="{StaticResource Cyan}"
+                           Grid.Row="1" Grid.Column="1"
+                           BindingContext="{x:Reference stp_crianca}"/>
+                    
+                    
+                    <Stepper Grid.Row="0" Grid.Column="2"
+                             x:Name="stp_adulto"
+                             Minimum="0"
+                             Maximum="10"
+                             Increment="1"/>
+                    <Stepper Grid.Row="1" Grid.Column="2"
+                             x:Name="stp_crianca"
+                             Maximum="10"
+                             Minimum="0"
+                             Increment="1"/>
+
+                </Grid>
+                <Label Text="ESCOLHA UMA SUITE"
+                       TextColor="{StaticResource Cyan}"
+                       FontFamily="Fjalla"
+                       FontSize="18"
+                       HorizontalTextAlignment="Center"/>
+                <Picker x:Name="pck_quarto"
+                        Title="Selecione sua Acomodação"/>
+
+                <Frame>
+
+
+                    <VerticalStackLayout>
+                        <Label Text="Periodo da Estadia"
+                               HorizontalTextAlignment="Center"/>
+
+                        <HorizontalStackLayout>
+                            <Label Text="Check-In:"/>
+                            <DatePicker x:Name="dtpck_checkin"
+                                        Format="dd/MM/yyyy"/>
+                        </HorizontalStackLayout>
+                        <HorizontalStackLayout>
+                            <Label Text="Check-Out:"/>
+                            <DatePicker x:Name="dtpck_checkout"
+                Format="dd/MM/yyyy"/>
+                        </HorizontalStackLayout>
+
+                    </VerticalStackLayout>
+
+                    
+
+
+                </Frame>
+
+                <Button Text="Avançar"
+                        BackgroundColor="{StaticResource Cyan}"/>
+                <Button Text="Sobre"
+                        Clicked="Button_Clicked"
+                        BackgroundColor="{StaticResource Cyan}"/>
+
+            </VerticalStackLayout>
+        </Frame>
+       
+
+    </VerticalStackLayout>
+</ContentPage>
