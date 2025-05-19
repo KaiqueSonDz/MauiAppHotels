@@ -17,6 +17,9 @@
                TextColor="{StaticResource Cyan}"
                Padding="10"/>
 
+        <Image Source="dev.png"
+               Aspect="AspectFit"/>
+
         <Frame>
             <Label Text="Aplicativo desenvolvido para aumentar o conhecimento nas aplicações de .NETMAUI.
                    Esta aplicação representa uma atividade da Agenda 13 da materia de DS do curso de Desenvolvimento de Sistemas"
@@ -31,7 +34,8 @@
 
         <Button Text="Voltar"
                 Clicked="Button_Clicked"
-                BackgroundColor="{StaticResource Cyan}"/>
+                BackgroundColor="{StaticResource Cyan}"
+                HorizontalOptions="End"/>
 
     </VerticalStackLayout>
 </ContentPage>

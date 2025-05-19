@@ -53,7 +53,8 @@
                        FontSize="18"
                        HorizontalTextAlignment="Center"/>
                 <Picker x:Name="pck_quarto"
-                        Title="Selecione sua Acomodação"/>
+                        Title="Selecione sua Acomodação"
+                        ItemDisplayBinding="{Binding Descricao}"/>
 
                 <Frame>
 
@@ -65,7 +66,8 @@
                         <HorizontalStackLayout>
                             <Label Text="Check-In:"/>
                             <DatePicker x:Name="dtpck_checkin"
-                                        Format="dd/MM/yyyy"/>
+                                        Format="dd/MM/yyyy"
+                                        DateSelected="dtpck_checkin_DateSelected"/>
                         </HorizontalStackLayout>
                         <HorizontalStackLayout>
                             <Label Text="Check-Out:"/>
@@ -80,11 +82,20 @@
 
                 </Frame>
 
+                <Grid RowDefinitions="auto,auto"
+                      ColumnDefinitions="*,*">
+
                 <Button Text="Avançar"
-                        BackgroundColor="{StaticResource Cyan}"/>
+                        Clicked="Button_Clicked_1"
+                        BackgroundColor="{StaticResource Cyan}"
+                        Grid.Row="0"  Grid.Column="0"
+                        Margin ="10"/>
                 <Button Text="Sobre"
                         Clicked="Button_Clicked"
-                        BackgroundColor="{StaticResource Cyan}"/>
+                        BackgroundColor="{StaticResource Cyan}"                        
+                        Grid.Row = "0" Grid.Column="1"
+                        Margin="10"/>
+                </Grid>
 
             </VerticalStackLayout>
         </Frame>
