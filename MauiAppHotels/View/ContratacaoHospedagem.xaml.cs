@@ -8,7 +8,7 @@ public partial class ContratacaoHospedagem : ContentPage
     {
         InitializeComponent();
 
-        PropApp = (App)App.Current;
+        PropApp = (App)Application.Current;
         pck_quarto.ItemsSource = PropApp.lista_quarto;
 
         dtpck_checkin.MinimumDate = DateTime.Now;        
@@ -19,24 +19,36 @@ public partial class ContratacaoHospedagem : ContentPage
 
     }
 
-    private void Button_Clicked(object sender, EventArgs e)
-    {
-        App.Current.MainPage = new Sobre();
-    }
-    //botao sobre
-
-    private void Button_Clicked_1(object sender, EventArgs e)
+    private async void Button_Clicked(object sender, EventArgs e)
     {
         try
         {
 
-            Navigation.PushAsync(new HospedagemContratada());
+            await Navigation.PushAsync(new Sobre());
 
         }
         catch (Exception ex)
         {
 
-            DisplayAlert("Ops", ex.Message, "OK");
+           await DisplayAlert("Ops", ex.Message, "OK");
+
+        }
+    }
+
+    //botao sobre
+
+    private async void Button_Clicked_1(object sender, EventArgs e)
+    {
+        try
+        {
+
+            await Navigation.PushAsync(new HospedagemContratada());
+
+        }
+        catch (Exception ex)
+        {
+
+            await DisplayAlert("Ops", ex.Message, "OK");
 
         }
     }//botao avançar
@@ -50,7 +62,7 @@ public partial class ContratacaoHospedagem : ContentPage
         dtpck_checkout.MinimumDate = data_selecionada_checkin.AddDays(1);
         dtpck_checkout.MaximumDate = data_selecionada_checkin.AddMonths(6);
 
-    }
+    }// innfos do date picker
 
     
 }//fecha classe

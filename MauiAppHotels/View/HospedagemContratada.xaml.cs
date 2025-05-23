@@ -11,11 +11,11 @@ public partial class HospedagemContratada : ContentPage
     {
 		try
 		{
-			Navigation.PopAsync();
+			await Navigation.PushAsync(new Pagamento());
 
 		}catch (Exception ex)
 		{
-			DisplayAlert("Ops", ex.Message, "OK");
+			await DisplayAlert("Ops", ex.Message, "OK");
 		}
     }
 }

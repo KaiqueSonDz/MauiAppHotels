@@ -8,6 +8,7 @@
              
     <VerticalStackLayout VerticalOptions="CenterAndExpand"
                          Padding="10">
+        
         <Label Text="Calculo da Diária"
                HorizontalTextAlignment="Center"
                FontSize="50"
@@ -18,12 +19,14 @@
             <VerticalStackLayout Spacing="10">
                 <Grid RowDefinitions="Auto, Auto"
                       ColumnDefinitions="*,*,2*">
-                    
-                    <Label Text="Adulto"
-                           Grid.Row="0" Grid.Column="0"/>
-                    <Label Text="{Binding Value}"
+
+                    <Label Grid.Row="0" Grid.Column="0" 
+                           Text="Adulto"/>
+
+
+                    <Label Grid.Row="0" Grid.Column="1"
+                           Text="{Binding Value}"
                            TextColor="{StaticResource Cyan}"
-                           Grid.Row="0" Grid.Column="1"
                            BindingContext="{x:Reference stp_adulto}"/>
 
 
@@ -61,6 +64,8 @@
 
                     <VerticalStackLayout>
                         <Label Text="Periodo da Estadia"
+                               TextTransform="Uppercase"
+                               FontSize="Subtitle"
                                HorizontalTextAlignment="Center"/>
 
                         <HorizontalStackLayout>
@@ -69,10 +74,11 @@
                                         Format="dd/MM/yyyy"
                                         DateSelected="dtpck_checkin_DateSelected"/>
                         </HorizontalStackLayout>
+                        
                         <HorizontalStackLayout>
                             <Label Text="Check-Out:"/>
                             <DatePicker x:Name="dtpck_checkout"
-                Format="dd/MM/yyyy"/>
+                                        Format="dd/MM/yyyy"/>
                         </HorizontalStackLayout>
 
                     </VerticalStackLayout>

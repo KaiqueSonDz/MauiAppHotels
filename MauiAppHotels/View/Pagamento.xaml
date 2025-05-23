@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppHotels.View.Pagamento"
+             Title="Pagamento"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="{StaticResource Darkred}">
+    <VerticalStackLayout VerticalOptions="Center"
+                         Spacing="10"
+                         Padding="10">
+
+        <Label Text="PAGAMENTO"
+               HorizontalOptions="Center"
+               FontSize="Large"
+               FontFamily="Fjalla"
+               TextColor="{StaticResource Cyan}"/>
+
+        <Frame>
+            <VerticalStackLayout Spacing="10">
+                <Label Text="Nome impresso no Cartão"
+                       TextColor="Cyan"/>
+                <Entry x:Name="nome_cartao" 
+                       Placeholder="ex: Denis s Silva"/>
+
+                <Label Text="Dados do Cartão"
+                       TextColor="Cyan"/>
+                <Entry x:Name="dd_cartao" 
+                       Placeholder="0000 0000 0000 0000"/>
+                <Label Text="CPF"
+                       TextColor="Cyan"/>
+                <Entry x:Name="dd_cpf"
+                       Placeholder="xxx.xxx.xxx-xx"/>
+                <Grid RowDefinitions="auto,auto,auto" ColumnDefinitions="*,*,*">
+                    <Label Grid.Row="0" Grid.Column="0"
+                           Text="Validade"
+                           TextColor="Cyan"/>
+                    <DatePicker Grid.Row="1" Grid.Column="0" 
+                                x:Name="dt_validade"
+                                Format="MM/yy"/>
+
+                    <Label Grid.Row="0" Grid.Column="1"
+                           Text="CVV"
+                           TextColor="{StaticResource Cyan}"/>
+                    <Entry Grid.Row="1" Grid.Column="1" 
+                           x:Name="dd_cvv" Placeholder="EX: 123"
+                           HorizontalOptions="Start"/>
+
+                    <Button Grid.Row="1" Grid.Column="2"
+                            Text="Confirmar"
+                            FontFamily="Fjalla"
+                            BackgroundColor="{StaticResource Cyan}"
+                            Clicked="Button_Clicked"/>
+
+                </Grid>
+
+            </VerticalStackLayout>
+        </Frame>
+
+    </VerticalStackLayout>
+</ContentPage>
