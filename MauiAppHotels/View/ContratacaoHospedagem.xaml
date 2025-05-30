@@ -62,23 +62,27 @@
                 <Frame>
 
 
-                    <VerticalStackLayout>
+                    <VerticalStackLayout Spacing="5">
                         <Label Text="Periodo da Estadia"
+                               FontFamily="Fjalla"
                                TextTransform="Uppercase"
+                               TextColor="{StaticResource Cyan}"
                                FontSize="Subtitle"
                                HorizontalTextAlignment="Center"/>
 
-                        <HorizontalStackLayout>
+                        <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
                             <Label Text="Check-In:"/>
                             <DatePicker x:Name="dtpck_checkin"
                                         Format="dd/MM/yyyy"
-                                        DateSelected="dtpck_checkin_DateSelected"/>
+                                        DateSelected="dtpck_checkin_DateSelected"
+                                        Margin="14,0,0,0"/>
                         </HorizontalStackLayout>
                         
-                        <HorizontalStackLayout>
+                        <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
                             <Label Text="Check-Out:"/>
                             <DatePicker x:Name="dtpck_checkout"
-                                        Format="dd/MM/yyyy"/>
+                                        Format="dd/MM/yyyy"
+                                        Margin="5,0,0,0"/>
                         </HorizontalStackLayout>
 
                     </VerticalStackLayout>
